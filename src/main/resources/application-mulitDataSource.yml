@@ -1,0 +1,13 @@
+# SpringBoot多数据源配置（JdbcTemplate，Spring-Data-JPA）
+spring:
+  datasource:
+    primary:
+      url: jdbc:mysql://localhost:3306/springbootdb1
+      username: root
+      password: mgl
+      driver-class-name: com.mysql.jdbc.Driver
+    secondary:
+      url: jdbc:mysql://localhost:3306/springbootdb2
+      username: root
+      password: mgl
+      driver-class-name: com.mysql.jdbc.Driver

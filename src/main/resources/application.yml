@@ -3,12 +3,27 @@ server:
 
 spring:
   profiles:
-    active: sit
+    active: mulitDataSource
+
+  # SpringBoot的单数据源配置
   datasource:
     url: jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf8
     username: root
     password: mgl
-    driver-class-name: com.mysql.jdbc.Driver
+   driver-class-name: com.mysql.jdbc.Driver
+
+    primary:
+      url: jdbc:mysql://localhost:3306/springbootdb1
+      username: root
+      password: mgl
+      driver-class-name: com.mysql.jdbc.Driver
+    secondary:
+      url: jdbc:mysql://localhost:3306/springbootdb2
+      username: root
+      password: mgl
+      driver-class-name: com.mysql.jdbc.Driver
+
+  # SpringBoot整合Freemarker配置
   freemarker:
     template-loader-path: classpath:/templates/
     cache: false
@@ -19,6 +34,14 @@ spring:
     expose-session-attributes: true
     request-context-attribute: request
     suffix: .ftl
+
+# MyBatis相关配置
 mybatis:
   type-aliases-package: com.github.mgljava.domain
   mapper-locations: classpath:mapper/*.xml
+
+# 自定义配置
+book:
+  name: My Book Is Java
+  author: Monk
+  desc: My Book Name Is ${book.name}, author is ${book.author}

@@ -1,4 +1,0 @@
-book:
-  name: My Book Is Java
-  author: Monk
-  desc: My Book Name Is ${book.name}, author is ${book.author}

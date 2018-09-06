@@ -1,4 +1,4 @@
-package com.example.demo.module.user.domain;
+package com.github.mgljava.module.user.domain;
 
 import lombok.Data;
 

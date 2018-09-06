@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.github.mgljava.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.example.demo.service.HelloService;
+import com.github.mgljava.service.HelloService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

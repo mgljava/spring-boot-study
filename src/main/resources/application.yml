@@ -1,6 +1,15 @@
 server:
   port: 8082
 
+
 spring:
   profiles:
     active: sit
+  datasource:
+    url: jdbc://mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  type-aliases-package: com.github.mgljava.domain
+  mapper-locations: classpath:mapper/*.xml

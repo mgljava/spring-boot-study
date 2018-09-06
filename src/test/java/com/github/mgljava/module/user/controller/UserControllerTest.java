@@ -1,4 +1,4 @@
-package com.example.demo.module.user.controller;
+package com.github.mgljava.module.user.controller;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;

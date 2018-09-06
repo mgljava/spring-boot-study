@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package com.github.mgljava.controller;
 
-import com.example.demo.service.HelloService;
+import com.github.mgljava.service.HelloService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

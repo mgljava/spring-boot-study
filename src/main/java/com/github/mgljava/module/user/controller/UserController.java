@@ -1,6 +1,6 @@
-package com.example.demo.module.user.controller;
+package com.github.mgljava.module.user.controller;
 
-import com.example.demo.module.user.domain.User;
+import com.github.mgljava.module.user.domain.User;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.github.mgljava.config;
 
 import lombok.Data;
 import lombok.ToString;

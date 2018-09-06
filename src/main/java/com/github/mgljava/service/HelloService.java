@@ -1,6 +1,6 @@
-package com.example.demo.service;
+package com.github.mgljava.service;
 
-import com.example.demo.config.BookConfiguration;
+import com.github.mgljava.config.BookConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

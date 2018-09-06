@@ -3,6 +3,9 @@ package com.github.mgljava.controller;
 import com.github.mgljava.domain.City;
 import com.github.mgljava.service.CityService;
 import java.util.List;
+
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +33,8 @@ public class CityRestController {
     return cityService.findAllCity();
   }
 
+  @ApiOperation(value = "创建City", notes = "根据City对象创建城市")
+  @ApiImplicitParam(name = "city", value = "城市的实体类", required = true, dataType = "City")
   @PostMapping(value = "/")
   public void createCity(@RequestBody City city) {
     cityService.saveCity(city);

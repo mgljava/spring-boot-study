@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.github.mgljava.domain")
+@MapperScan("com.github.mgljava.dao")
 public class SpringBootStudyApplication {
 
   public static void main(String[] args) {

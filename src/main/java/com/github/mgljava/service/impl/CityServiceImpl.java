@@ -5,13 +5,14 @@ import com.github.mgljava.domain.City;
 import com.github.mgljava.service.CityService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class CityServiceImpl implements CityService {
 
-  private final CityDao cityDao;
+  @Autowired
+  private CityDao cityDao;
 
   @Override
   public List<City> findAllCity() {

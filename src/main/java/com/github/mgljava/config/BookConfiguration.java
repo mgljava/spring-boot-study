@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Data
 @ToString
 @Component
-@PropertySource(value = {"classpath:application-sit.yml", "classpath:application.yml"})
+@PropertySource(value = {"classpath:application.yml"})
 @ConfigurationProperties(prefix = "book")
 public class BookConfiguration {
 

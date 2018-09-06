@@ -2,16 +2,12 @@ server:
   port: 8082
 
 spring:
-  profiles:
-    active: mulitDataSource
-
   # SpringBoot的单数据源配置
   datasource:
     url: jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf8
     username: root
     password: mgl
-   driver-class-name: com.mysql.jdbc.Driver
-
+    driver-class-name: com.mysql.jdbc.Driver
     primary:
       url: jdbc:mysql://localhost:3306/springbootdb1
       username: root

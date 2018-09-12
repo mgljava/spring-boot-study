@@ -6,19 +6,8 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf8
     username: root
-    password: mgl
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
-    primary:
-      url: jdbc:mysql://localhost:3306/springbootdb1
-      username: root
-      password: mgl
-      driver-class-name: com.mysql.jdbc.Driver
-    secondary:
-      url: jdbc:mysql://localhost:3306/springbootdb2
-      username: root
-      password: mgl
-      driver-class-name: com.mysql.jdbc.Driver
-
   # SpringBoot整合Freemarker配置
   freemarker:
     template-loader-path: classpath:/templates/
@@ -30,9 +19,6 @@ spring:
     expose-session-attributes: true
     request-context-attribute: request
     suffix: .ftl
-    settings:
-      auto_import: /spring.ftl as spring
-      suffix: .html
 
 # MyBatis相关配置
 mybatis:

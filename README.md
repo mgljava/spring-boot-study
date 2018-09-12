@@ -13,3 +13,5 @@ CREATE TABLE `city` (
 INSERT city VALUES (1 ,510100,'成都市','成都市又名天府之国');
 INSERT city VALUES (2 ,510300,'自贡市','自贡市又名南国灯城');
 INSERT city VALUES (3 ,510800,'宜宾市','自贡市又名江南之乡');
+
+Swagger: http://localhost:8082/swagger-ui.html

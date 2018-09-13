@@ -1,4 +1,4 @@
-package com.github.mgljava.config;
+package com.github.mgljava.redis;
 
 import com.github.mgljava.domain.User;
 import com.github.mgljava.redis.RedisObjectSerializer;

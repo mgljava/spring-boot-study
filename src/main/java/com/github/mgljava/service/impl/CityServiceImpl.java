@@ -4,7 +4,6 @@ import com.github.mgljava.dao.CityDao;
 import com.github.mgljava.domain.City;
 import com.github.mgljava.service.CityService;
 import java.util.List;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

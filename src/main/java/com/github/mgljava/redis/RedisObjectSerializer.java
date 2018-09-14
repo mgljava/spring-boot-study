@@ -14,7 +14,7 @@ public class RedisObjectSerializer implements RedisSerializer<Object> {
   static final byte[] EMPTY_ARRAY = new byte[0];
 
   @Override
-  public byte[] serialize(Object object) throws SerializationException {
+  public byte[] serialize(Object object) {
     if (object == null) {
       return EMPTY_ARRAY;
     }
@@ -26,7 +26,7 @@ public class RedisObjectSerializer implements RedisSerializer<Object> {
   }
 
   @Override
-  public Object deserialize(byte[] bytes) throws SerializationException {
+  public Object deserialize(byte[] bytes) {
     if (isEmpty(bytes)) {
       return null;
     }

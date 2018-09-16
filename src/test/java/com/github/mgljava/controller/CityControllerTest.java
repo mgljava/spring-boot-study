@@ -47,7 +47,6 @@ public class CityControllerTest {
     void should_get_all_city_object() throws Exception {
         // given
 
-
         // when
         when(cityService.findAllCity()).thenReturn(ImmutableList.of());
 

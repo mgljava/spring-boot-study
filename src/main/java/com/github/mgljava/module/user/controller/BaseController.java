@@ -11,4 +11,5 @@ public class BaseController {
 
   protected static final String SUCCESS = "success";
   protected static final String SUCCESS_ONE = "success";
+  protected static final String SUCCESS_TWO = "success";
 }

@@ -122,6 +122,19 @@
     </dependency>
   </dependencies>
 
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <configLocation>config/checkstyle/checkstyle.xml</configLocation>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
   <build>
     <plugins>
       <plugin>
@@ -129,7 +142,47 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
 
-      <plugin>
+      <!--<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>verify-style</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <logViolationsToConsole>true</logViolationsToConsole>
+          <checkstyleRules>
+            <module name="Checker">
+
+              &lt;!&ndash; Checks for Size Violations.                    &ndash;&gt;
+              &lt;!&ndash; See http://checkstyle.sf.net/config_sizes.html &ndash;&gt;
+              <module name="FileLength">
+                <property name="max" value="3500" />
+                <property name="fileExtensions" value="java"/>
+              </module>
+
+              &lt;!&ndash; Checks for whitespace                               &ndash;&gt;
+              &lt;!&ndash; See http://checkstyle.sf.net/config_whitespace.html &ndash;&gt;
+              <module name="FileTabCharacter"/>
+
+              <module name="TreeWalker">
+                <module name="StaticVariableName"/>
+                <module name="TypeName">
+                  <property name="format" value="^_?[A-Z][a-zA-Z0-9]*$"/>
+                </module>
+              </module>
+            </module>
+          </checkstyleRules>
+        </configuration>
+      </plugin>-->
+
+      <!--<plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.0.0</version>
@@ -151,7 +204,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
+      </plugin>-->
     </plugins>
   </build>
 </project>

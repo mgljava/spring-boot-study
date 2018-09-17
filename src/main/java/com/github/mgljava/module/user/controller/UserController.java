@@ -1,14 +1,12 @@
 package com.github.mgljava.module.user.controller;
 
 import com.github.mgljava.module.user.domain.User;
+import com.github.mgljava.module.user.service.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,23 +18,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/users")
-public class UserController {
+public class UserController extends BaseController {
 
-  private static final String SUCCESS = "success";
-
-  static Map<Long, User> userMap = Collections.synchronizedMap(new HashMap<>());
+  @Autowired
+  private UserService userService;
 
   @ApiOperation(value = "获取用户列表")
   @GetMapping(value = "/")
   public List<User> getUsers() {
-    return new ArrayList<>(userMap.values());
+    return userService.getUsers();
   }
 
   @ApiOperation(value = "创建用户", notes = "根据User对象创建用户")
   @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
   @PostMapping(value = "/")
   public String postUser(@ModelAttribute User user) {
-    userMap.put(user.getId(), user);
+    userService.postUser(user);
     return SUCCESS;
   }
 
@@ -44,7 +41,7 @@ public class UserController {
   @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
   @GetMapping(value = "/{id}")
   public User getUserById(@PathVariable Long id) {
-    return userMap.get(id);
+    return userService.getUserById(id);
   }
 
   @ApiOperation(value = "更新用户详细信息", notes = "根据url的id来指定更新对象，并根据传过来的user信息来更新用户详细信息")
@@ -54,10 +51,7 @@ public class UserController {
   })
   @PutMapping(value = "/{id}")
   public String putUser(@PathVariable Long id, @ModelAttribute User user) {
-    User updateUser = userMap.get(id);
-    updateUser.setName(user.getName());
-    updateUser.setAge(user.getAge());
-    userMap.put(id, updateUser);
+    userService.putUser(id, user);
     return SUCCESS;
   }
 
@@ -65,7 +59,7 @@ public class UserController {
   @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
   @DeleteMapping(value = "/{id}")
   public String deleteUser(@PathVariable Long id) {
-    userMap.remove(id);
+    userService.deleteUser(id);
     return SUCCESS;
   }
 }
